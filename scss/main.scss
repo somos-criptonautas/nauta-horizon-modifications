@@ -1,0 +1,560 @@
+// Base font size (matches Discourse default)
+html {
+  font-size: 20px;
+  font-size: 110%;
+}
+
+:root {
+  --main-grid-gap: 0.5em;
+}
+
+html:not(:has(.has-full-page-chat)) {
+  background-color: var(--background-color);
+
+  @media (width <= 576px) {
+    background-color: var(--d-content-background);
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+
+  @media (width <= 576px) {
+    background-color: var(--d-content-background);
+  }
+}
+
+#main-outlet-wrapper {
+  gap: var(--main-grid-gap);
+}
+
+body.has-sidebar-page.has-full-page-chat #main-outlet-wrapper {
+  grid-column-gap: var(--main-grid-gap);
+  background-color: var(--background-color);
+}
+
+body.has-full-page-chat:not(.has-sidebar-page) {
+  .d-header {
+    background-color: var(--background-color);
+  }
+
+  #main-outlet-wrapper {
+    gap: var(--main-grid-gap);
+
+    @media (width <= 1024px) {
+      gap: 0;
+    }
+  }
+}
+
+body.has-sidebar-page #main-outlet-wrapper {
+  grid-template-columns: var(--d-sidebar-width) minmax(0, 1fr) 0;
+
+  #main-outlet {
+    max-width: unset;
+  }
+}
+
+body:not(.has-sidebar-page) #main-outlet-wrapper {
+  @media (width >= 1024px) {
+    grid-template-columns: 0 minmax(0, 1fr) 0;
+  }
+}
+
+body:not(.has-full-page-chat, .wizard) {
+  @media (width >= 1200px) {
+    background-color: var(--background-color);
+  }
+
+  #main-outlet-wrapper {
+    @media (width <= 1024px) {
+      --main-grid-gap: 0;
+    }
+
+    @media (width >= 768px) {
+      gap: var(--main-grid-gap);
+    }
+
+    #main-outlet {
+      width: 100%;
+      max-width: unset;
+      padding-bottom: var(--spacing-block-l);
+      border-radius: var(--d-border-radius-large);
+      background-color: var(--d-content-background);
+
+      @media (width <= 1024px) {
+        border-radius: 0;
+      }
+
+      html.composer-open & {
+        padding-bottom: var(--composer-height);
+      }
+
+      > *:not(.experimental-screen, .activate-account) {
+        @media (width >= 1024px) {
+          box-sizing: border-box;
+          max-width: 1000px;
+          margin-inline: auto;
+          padding-inline: var(--spacing-inline-l);
+        }
+      }
+    }
+  }
+}
+
+@media (width <= 576px) {
+  .welcome-banner {
+    display: none;
+  }
+}
+
+#list-area {
+  .show-more.has-topics {
+    @media (width >= 1024px) {
+      width: auto;
+      right: 50%;
+      transform: translateX(50%);
+
+      .alert {
+        padding: var(--spacing-block-sm) var(--spacing-inline-m);
+        border-radius: var(--d-border-radius-large);
+        font-size: var(--font-down-1-rem);
+      }
+    }
+  }
+
+  .topic-list-body {
+    padding-top: var(--spacing-block-m);
+  }
+}
+
+aside.onebox {
+  background-color: var(--d-content-background);
+}
+
+.d-editor-preview-wrapper {
+  border-radius: var(--d-border-radius);
+  padding: 1em;
+  background-color: var(--d-content-background);
+}
+
+.no-ember {
+  #main-outlet {
+    border-radius: var(--d-border-radius-large);
+    margin: 0 var(--main-grid-gap) var(--main-grid-gap) var(--main-grid-gap);
+    padding: 2em;
+    max-height: calc(100vh - 50px - 1em - var(--main-grid-gap));
+  }
+}
+
+// Nauta edits //
+.signup-progress-bar,
+#user-menu-button-other-notifications,
+.presence-toggle,
+.user-nav__notifications,
+.user-nav__badges,
+.collapsed-info-panel:last-child,
+.sidebar-section-wrapper .sidebar-section-header-global-indicator .d-icon,
+.groups-header-filters,
+.user-nav__preferences-interface,
+.user-nav__preferences-navigation-menu,
+.user-nav__preferences-ai,
+.user-nav__activity-read,
+.category-quienes-somos .top-lists,
+.sidebar-section-link-wrapper [data-list-item-name="activity-pub-about"] {
+  display: none !important;
+}
+
+.tag-group-content_languages_disabled,
+.tag-group-content_languages,
+.tag-group-tickets_priority,
+.tag-group-tickets_status {
+  display: none !important;
+}
+
+.user-card .badge-section {
+  display: none !important;
+}
+
+.list-controls {
+  padding: 0;
+}
+
+.img.emoji {
+  width: 23px;
+  height: 23px;
+  padding-bottom: 3px;
+  padding-left: 3px;
+}
+
+.collapsed-info-panel dl div:last-child,
+.collapsed-info-panel dd.trust-level,
+.collapsed-info-panel dl.trust-level,
+.user-content .badges-section {
+  display: none !important;
+}
+
+.collapsed-info-panel dd.groups a.ember-view {
+  display: none !important;
+}
+
+.badge-grouping:nth-child(1).badge-group-list::before {
+  content: "@anons se transforman en @randoms con 4 desafíos:";
+}
+
+.badge-grouping:nth-child(2).badge-group-list::before {
+  content: "@randoms son @traders con estos 9:";
+}
+
+#reply-control.draft {
+  padding: 0.5rem 0;
+}
+
+.has-ai-conversations-sidebar .ai-new-question-button {
+  margin: 1.8em 1rem 1rem;
+}
+
+.category-box .category-box-soporte,
+.category-box .category-box-wiki {
+  display: none;
+}
+
+.signup-fullpage .signup-body {
+  max-width: 850px;
+}
+
+[data-section-name="tags"],
+[data-section-name="user-threads"],
+[data-section-name="messages"] {
+  display: none !important;
+}
+
+// ** Dirty hack to hide titles and flair user changing ** //
+.control-group .pref-title,
+.control-group .pref-flair {
+  display: none !important;
+}
+
+.div[class^="category-title-header"] {
+  color: unset !important;
+}
+
+// ** Apply styles to some categories ** //
+.sidebar-section-link [data-link-name="preguntas"] a,
+.sidebar-section-link [data-link-name="preguntas"] .icon svg,
+.sidebar-section-link [data-link-name="curso"] a,
+.sidebar-section-link [data-link-name="curso"] .icon svg {
+  color: #be99f8 !important;
+}
+
+// ** Invert search-box on search page ** //
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-not-found {
+  order: 1;
+}
+
+.page-not-found-search {
+  order: 2;
+  margin: 20px 0;
+}
+
+.page-not-found-topics {
+  order: 3;
+}
+
+.install-theme-item input:checked + label {
+  border-radius: 0.23rem;
+}
+
+.category-breadcrumb li:first-child {
+  display: none !important;
+}
+
+.message-panel__inboxes .message-panel__inbox:nth-last-child {
+  display: none;
+}
+
+// Buttons on ending topics with normal line-height
+button [title="similares"] .d-button-label {
+  line-height: normal;
+}
+
+// No border on similar/unread topics
+.more-topics__container .nav {
+  border-bottom: none;
+}
+
+// Less gap on 'more topics' desktop
+.topic-list-body {
+  gap: 1em;
+}
+
+// Prevent weird spacing on user menu
+.custom-user-menu-content .fk-d-menu__profile-tab li.preferences {
+  padding-bottom: none;
+}
+
+// Prevent weird hover on more-topics buttons
+.discourse-no-touch .more-topics__container .nav li .btn:hover {
+  background: none;
+}
+
+// Same text for all sidebar makes sense
+.sidebar-section-link-wrapper[data-list-item-name="all-categories"],
+.sidebar-section-link-wrapper[data-list-item-name="all-tags"],
+.sidebar-section-link-wrapper[data-list-item-name="configure-default-navigation-menu-tags"] {
+  font-size: inherit;
+}
+
+//  Hide repeated trust_levels
+.group-box [data-group-name="trust_level_1"],
+.group-box [data-group-name="trust_level_2"],
+.group-box [data-group-name="trust_level_3"] {
+  display: none;
+}
+
+// Style journal plugin
+.topic-post.comment .topic-body .regular .post-menu-area,
+div.topic-post.comment .topic-body .who-liked,
+div.topic-post.comment .topic-body .who-read {
+  background: unset;
+  border-top: unset;
+}
+
+.topic-post.comment {
+  padding-left: 23px;
+  padding-bottom: 30px;
+}
+
+// Chat bigger font fix
+.chat-drawer-content {
+  font-size: var(--font-down-2);
+}
+
+// Hide default trust_levels
+.group-box[data-group-name="trust_level_1"],
+.group-box[data-group-name="trust_level_2"],
+.group-box[data-group-name="trust_level_3"],
+.group-box[data-group-name="trust_level_4"] {
+  display: none !important;
+}
+
+.select-kit .select-kit-row[data-name="trust_level_1"],
+.select-kit .select-kit-row[data-name="trust_level_2"],
+.select-kit .select-kit-row[data-name="trust_level_3"],
+.select-kit .select-kit-row[data-name="trust_level_4"] {
+  display: none !important;
+}
+
+// Improve Docs
+.discourse-docs-sidebar-panel
+  .sidebar-section-link-wrapper
+  .sidebar-section-link {
+  padding: 0.3rem 1rem;
+}
+
+// styling
+.more-topics__list-title {
+  font-size: var(--font-up-2);
+}
+
+.badge-card .badge-contents .badge-icon.badge-type-gold .fa,
+.user-badge.badge-type-gold .fa,
+.user-card .badge-section .more-user-badges a.badge-type-gold .fa {
+  color: unset !important;
+}
+
+.leaderboard .winner.-position1 .winner__crown,
+.leaderboard .ranking-col-names {
+  display: none;
+}
+
+.leaderboard .winner.-position1 .winner__avatar img,
+.leaderboard .winner.-position3 .winner__avatar img {
+  border-color: #c4c4c4;
+  background-color: #d6d6d6;
+}
+
+.leaderboard .winner.-position1 .winner__rank,
+.leaderboard .winner.-position3 .winner__rank {
+  background-color: #c4c4c4;
+}
+
+.leaderboard .winner {
+  margin: 0.33rem;
+}
+
+.anon .sidebar-section-wrapper.sidebar-section[data-section-name="mas-apps"],
+li.sidebar-section-link-wrapper[data-category-id="37"] {
+  display: none !important;
+}
+
+// [EXPERIMENTAL] Hiding activity switchs for MPs vertical navbar design
+body.user-activity-page .user-navigation .user-navigation-secondary {
+  display: none !important;
+}
+
+// Workaround on MP messages for new User UI
+body.user-messages-page .new-user-wrapper .user-navigation-secondary {
+  display: unset;
+}
+
+// Disable some AI Helper functions
+ul.ai-helper-options li[data-value="replace_dates"],
+ul.ai-helper-options li[data-value="markdown_table"] {
+  display: none;
+}
+
+// Hide redundant groups
+.groups-boxes .group-box [data-group-name="moderadores"],
+.groups-boxes .group-box [data-group-name="admins"] {
+  display: none;
+}
+
+// Style TOCs
+.d-toc-main #d-toc li.d-toc-item {
+  padding-left: 0.33em;
+}
+
+.d-toc-main #d-toc li.d-toc-item.direct-active > a::before {
+  width: 2px;
+}
+
+.d-toc-main #d-toc > ul > li > ul li.direct-active > a::before {
+  margin-left: -5px;
+}
+
+.d-toc-heading:not(first-child) {
+  padding-top: 0.33em;
+}
+
+// Hiding some profile card info
+.user-main .about .secondary.trust-level,
+.user-main .about .secondary.groups {
+  display: none;
+}
+
+// Update posts message
+#list-area .show-more .alert {
+  padding: 0.65rem 1.15rem;
+  border-radius: 0.5rem;
+}
+
+// Hide redundant dropdowns on new posts
+.dropdown-menu__item [data-name="quote"],
+.dropdown-menu__item [data-name="toggle-whisper"],
+.dropdown-menu .shortcut {
+  display: none;
+}
+
+// Fix chat thread title size
+.c-user-thread .chat__thread-title__name {
+  font-size: var(--font-up-1);
+}
+
+// Hide stuff on profile
+.user-preferences .form-vertical .control-group .pref-title,
+.user-preferences .form-vertical .control-group .pref-flair,
+.user-preferences .form-vertical .control-group .pref-email-settings {
+  display: none;
+}
+
+// Disable theme switcher and Sidebar 'More'
+.sidebar-more-section-trigger:first-of-type,
+.user-color-palette-selector-trigger {
+  display: none !important;
+}
+
+// Some icons on white
+.flair-agoristas {
+  color: #f1f1f1;
+}
+
+// More stuff
+img.emoji {
+  vertical-align: unset;
+}
+
+[data-wrap="button"] {
+  text-align: center;
+  padding-top: 0.3rem;
+}
+
+[data-wrap="button"] a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-weight: normal;
+  border-radius: var(--d-button-border-radius);
+  transition: var(--d-button-transition);
+  cursor: pointer;
+  font-size: var(--font-0);
+  line-height: normal;
+  box-sizing: border-box;
+  padding: 0.5em 0.65em;
+  border: var(--d-button-border);
+  background-color: var(--accent-color);
+  color: var(--accent-text-color);
+}
+
+[data-wrap="button"] a:hover {
+  background: light-dark(
+    oklch(from var(--accent-color) 40% c h),
+    oklch(from var(--accent-color) 50% c h)
+  );
+}
+
+// Centered videos
+[data-wrap="centered-video"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Restrict max-width if your vertical video is too tall
+[data-wrap="centered-video"] video,
+[data-wrap="centered-video"] iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+// Heading on quotes titles
+.quote .title a {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+.select-kit .select-kit-header {
+  padding: 0.45em 0.65em;
+}
+
+.topic-list-body .topic-list-item .topic-status-card {
+  margin-right: 0.15rem;
+}
+
+.more-topics__lists {
+  margin-bottom: 2rem;
+}
+
+.top-lists {
+  display: flex;
+  padding: 0.66rem 0 0 1rem;
+}
+
+.campaign-banner-info svg {
+  display: none !important;
+}
+
+// Big button on Subscriptions campaigns
+.campaign-banner .btn.close {
+  top: 0.5rem !important;
+  right: 0.5rem !important;
+  font-size: 1.3rem !important;
+}
