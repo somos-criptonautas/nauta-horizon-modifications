@@ -26,28 +26,48 @@
 <!-- Text on /badges -->
 <script>
   (function () {
-    function injectBadgeBanner() {
-      if (!window.location.pathname.startsWith("/badges")) return;
-      if (document.getElementById("custom-badges-banner")) return;
+    var banners = {
+      "/badges": {
+        id: "custom-badges-banner",
+        key: "badges_banner.description",
+        link: '<a href="/nuestros-retos">(más info)</a>',
+      },
+      "/groups": {
+        id: "custom-groups-banner",
+        key: "groups_banner.description",
+        link: '<a href="/nuestros-ghettos">(más info)</a>',
+      },
+    };
 
-      var target = document.querySelector(".badges-page");
+    function injectBanner() {
+      var path = window.location.pathname;
+      var config = null;
+
+      for (var route in banners) {
+        if (path.startsWith(route)) {
+          config = banners[route];
+          break;
+        }
+      }
+
+      if (!config) return;
+      if (document.getElementById(config.id)) return;
+
+      var target = document.querySelector("#main-outlet-wrapper");
       if (!target) return;
 
       var banner = document.createElement("div");
-      banner.id = "custom-badges-banner";
-      banner.innerHTML = `<p>${I18n.t("badges_banner.description")}</p>`;
-      banner.style.cssText = [
-        "padding: 0.75rem 1rem",
-        "margin-bottom: 1rem",
-      ].join(";");
+      banner.id = config.id;
+      banner.innerHTML = `<p>${I18n.t(config.key, { defaultValue: "" })} ${config.link}</p>`;
+      banner.style.cssText = ["padding: 0.65rem 1rem"].join(";");
 
-      target.insertBefore(banner, target.firstChild);
+      target.insertAdjacentElement("beforebegin", banner);
     }
 
-    injectBadgeBanner();
+    injectBanner();
 
     var observer = new MutationObserver(function () {
-      injectBadgeBanner();
+      injectBanner();
     });
 
     observer.observe(document.body, { childList: true, subtree: true });

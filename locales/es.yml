@@ -4,8 +4,6 @@
 es:
   js:
     badges_banner:
-      description: |-
-        Supera nuestros retos aportando en la Comunidad <a href='/retos'>(más info)</a>
+      description: "Supera nuestros retos aportando en la Comunidad"
     groups_banner:
-      description: |-
-        Nuestros ghettos habilitan funciones y más accesos <a href='/ghettos'>(más info)</a>
+      description: "Nuestros ghettos habilitan funciones y más accesos"
