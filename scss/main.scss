@@ -562,3 +562,23 @@ img.emoji {
 .d-editor-preview ol {
   padding-inline-start: none;
 }
+
+// Change earned badge styling
+.check-display.status-checked {
+  background-color: #ccc !important;
+}
+.check-display {
+  border-radius: 0.15rem !important;
+}
+.groups-boxes .group-box .group-membership .is-group-owner,
+.groups-boxes .group-box .group-membership .is-group-member {
+  color: unset !important;
+}
+.is-group-member .svg-icon {
+  vertical-align: -0.2em !important;
+}
+
+// Padding to search button
+.btn .search-icon {
+  padding-bottom: 0.11rem;
+}
