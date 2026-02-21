@@ -57,31 +57,48 @@
 <!-- Text on /groups -->
 <script>
   (function () {
-    function injectGroupsBanner() {
-      if (!window.location.pathname.startsWith("/groups")) return;
-      if (document.getElementById("custom-groups-banner")) return;
+    var banners = {
+      "/badges": {
+        id: "custom-badges-banner",
+        selector: ".badges-page",
+        key: "badges_banner.description",
+      },
+      "/groups": {
+        id: "custom-groups-banner",
+        selector: ".groups-index",
+        key: "groups_banner.description",
+      },
+    };
 
-      var target = document.querySelector(".groups-index");
+    function injectBanner() {
+      var path = window.location.pathname;
+      var config = null;
+
+      for (var route in banners) {
+        if (path.startsWith(route)) {
+          config = banners[route];
+          break;
+        }
+      }
+
+      if (!config) return;
+      if (document.getElementById(config.id)) return;
+
+      var target = document.querySelector(config.selector);
       if (!target) return;
 
       var banner = document.createElement("div");
-      banner.id = "custom-groups-banner";
-      banner.innerHTML = `<p>${I18n.t("groups_banner.description")}</p>`;
-      banner.style.cssText = [
-        "padding: 16px 20px",
-        "margin-bottom: 20px",
-        "background: #f0f4ff",
-        "border-left: 4px solid #6c8ebf",
-        "border-radius: 4px",
-      ].join(";");
+      banner.id = config.id;
+      banner.innerHTML = `<p>${I18n.t(config.key)}</p>`;
+      banner.style.cssText = ["padding: 0.7rem 1rem"].join(";");
 
       target.insertBefore(banner, target.firstChild);
     }
 
-    injectGroupsBanner();
+    injectBanner();
 
     var observer = new MutationObserver(function () {
-      injectGroupsBanner();
+      injectBanner();
     });
 
     observer.observe(document.body, { childList: true, subtree: true });
