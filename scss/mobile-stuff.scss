@@ -176,3 +176,31 @@ body.f-nav-hidden:not(
     }
   }
 } */
+
+// On mobile: render the same components as desktop,
+// but stack them vertically (categories → recent posts)
+.mobile-view {
+  .category-list-with-topics {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5em;
+
+    // Both columns take full width
+    > * {
+      width: 100% !important;
+      max-width: 100% !important;
+      flex: unset !important;
+    }
+
+    // Categories section comes first naturally (it's first in DOM)
+    .category-list {
+      order: 1;
+    }
+
+    // Recent posts section stacks below
+    .latest-topic-list,
+    .category-list-sidebar {
+      order: 2;
+    }
+  }
+}

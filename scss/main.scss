@@ -558,3 +558,12 @@ img.emoji {
   right: 0.5rem !important;
   font-size: 1.3rem !important;
 }
+
+// Remove ul spacing
+
+.cooked ul,
+.cooked ol,
+.d-editor-preview ul,
+.d-editor-preview ol {
+  padding-inline-start: none;
+}
