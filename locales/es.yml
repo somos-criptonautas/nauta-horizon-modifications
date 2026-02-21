@@ -1,0 +1,12 @@
+# English translations for Horizon (Nautas) Modifications theme component
+# Add custom translations here if needed
+
+# en:
+#   theme_metadata:
+#     description: "Theme component adding custom modifications to the Discourse Horizon theme"
+es:
+  js:
+    badges_banner:
+      description: "Supera nuestros retos aportando en la Comunidad <a href='/retos'>(más info)</a>"
+    groups_banner:
+      description: "Nuestros ghettos habilitan funciones y más accesos <a href='/ghettos'>(más info)</a>"
