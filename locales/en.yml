@@ -4,3 +4,9 @@
 # en:
 #   theme_metadata:
 #     description: "Theme component adding custom modifications to the Discourse Horizon theme"
+en:
+  js:
+    badges_banner:
+      description: "Complete quests by participating in our Community <a href='/quests'>(more info)</a>"
+    groups_banner:
+      description: "Our ghettos enable more actions, access and funcionality <a href='/ghettos'>(more info)</a>"

@@ -6,9 +6,84 @@
   }
 </script>
 
+<!-- Replace icons -->
 <script type="text/discourse-plugin" version="0.8">
   api.replaceIcon('robot', 'lightning');
   api.replaceIcon('language', 'translate');
   api.replaceIcon('pencil', 'note-pencil');
   api.replaceIcon('list', 'list-dashes');
+</script>
+
+<!-- Remove closed string on groups -->
+</script>
+document.querySelectorAll('.group-membership-button').forEach(div => {
+  if (div.textContent.trim() === 'closed' || text === 'cerrado') {
+    div.style.display = 'none';
+  }
+});
+</script>
+
+<!-- Text on /badges -->
+<script>
+  (function () {
+    function injectBadgeBanner() {
+      if (!window.location.pathname.startsWith("/badges")) return;
+      if (document.getElementById("custom-badges-banner")) return;
+
+      var target = document.querySelector(".badges-page");
+      if (!target) return;
+
+      var banner = document.createElement("div");
+      banner.id = "custom-badges-banner";
+      banner.innerHTML = `<p>${I18n.t("badges_banner.description")}</p>`;
+      banner.style.cssText = [
+        "padding: 0.75rem 1rem",
+        "margin-bottom: 1rem",
+      ].join(";");
+
+      target.insertBefore(banner, target.firstChild);
+    }
+
+    injectBadgeBanner();
+
+    var observer = new MutationObserver(function () {
+      injectBadgeBanner();
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  })();
+</script>
+
+<!-- Text on /groups -->
+<script>
+  (function () {
+    function injectGroupsBanner() {
+      if (!window.location.pathname.startsWith("/groups")) return;
+      if (document.getElementById("custom-groups-banner")) return;
+
+      var target = document.querySelector(".groups-index");
+      if (!target) return;
+
+      var banner = document.createElement("div");
+      banner.id = "custom-groups-banner";
+      banner.innerHTML = `<p>${I18n.t("groups_banner.description")}</p>`;
+      banner.style.cssText = [
+        "padding: 16px 20px",
+        "margin-bottom: 20px",
+        "background: #f0f4ff",
+        "border-left: 4px solid #6c8ebf",
+        "border-radius: 4px",
+      ].join(";");
+
+      target.insertBefore(banner, target.firstChild);
+    }
+
+    injectGroupsBanner();
+
+    var observer = new MutationObserver(function () {
+      injectGroupsBanner();
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  })();
 </script>

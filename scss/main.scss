@@ -310,13 +310,6 @@ button [title="similares"] .d-button-label {
   font-size: inherit;
 }
 
-//  Hide repeated trust_levels
-.group-box [data-group-name="trust_level_1"],
-.group-box [data-group-name="trust_level_2"],
-.group-box [data-group-name="trust_level_3"] {
-  display: none;
-}
-
 // Style journal plugin
 .topic-post.comment .topic-body .regular .post-menu-area,
 div.topic-post.comment .topic-body .who-liked,
@@ -350,29 +343,32 @@ div.topic-post.comment .topic-body .who-read {
   display: none !important;
 }
 
-// Improve Docs
+// Padding on Docs
 .discourse-docs-sidebar-panel
   .sidebar-section-link-wrapper
   .sidebar-section-link {
   padding: 0.3rem 1rem;
 }
 
-// styling
+// Topic list styling
 .more-topics__list-title {
   font-size: var(--font-up-2);
 }
 
+// No gold styling badges
 .badge-card .badge-contents .badge-icon.badge-type-gold .fa,
 .user-badge.badge-type-gold .fa,
 .user-card .badge-section .more-user-badges a.badge-type-gold .fa {
   color: unset !important;
 }
 
+// No crown on /badges
 .leaderboard .winner.-position1 .winner__crown,
 .leaderboard .ranking-col-names {
   display: none;
 }
 
+// Leading leaderboard with no styling
 .leaderboard .winner.-position1 .winner__avatar img,
 .leaderboard .winner.-position3 .winner__avatar img {
   border-color: #c4c4c4;
@@ -388,6 +384,7 @@ div.topic-post.comment .topic-body .who-read {
   margin: 0.33rem;
 }
 
+// Remove apps from @anon sidebar
 .anon .sidebar-section-wrapper.sidebar-section[data-section-name="mas-apps"],
 li.sidebar-section-link-wrapper[data-category-id="37"] {
   display: none !important;
@@ -404,15 +401,14 @@ body.user-messages-page .new-user-wrapper .user-navigation-secondary {
 }
 
 // Disable some AI Helper functions
-ul.ai-helper-options li[data-value="replace_dates"],
-ul.ai-helper-options li[data-value="markdown_table"] {
+ul.ai-helper-options li[data-value="replace_dates"] {
   display: none;
 }
 
 // Hide redundant groups
 .groups-boxes .group-box [data-group-name="moderadores"],
 .groups-boxes .group-box [data-group-name="admins"] {
-  display: none;
+  display: none !important;
 }
 
 // Style TOCs
@@ -451,10 +447,10 @@ ul.ai-helper-options li[data-value="markdown_table"] {
   display: none;
 }
 
-// Fix chat thread title size
+/* // Fix chat thread title size
 .c-user-thread .chat__thread-title__name {
   font-size: var(--font-up-1);
-}
+} */
 
 // Hide stuff on profile
 .user-preferences .form-vertical .control-group .pref-title,
@@ -560,10 +556,25 @@ img.emoji {
 }
 
 // Remove ul spacing
-
 .cooked ul,
 .cooked ol,
 .d-editor-preview ul,
 .d-editor-preview ol {
   padding-inline-start: none;
+}
+
+// Change earned badge styling
+.check-display.status-checked {
+  background-color: none;
+}
+.check-display {
+  border-radius: 0.15rem;
+  font-size: var(--font-up-2);
+}
+.groups-boxes .group-box .group-membership .is-group-owner,
+.groups-boxes .group-box .group-membership .is-group-member {
+  color: unset;
+}
+.is-group-member .svg-icon {
+  vertical-align: -0.2em;
 }
