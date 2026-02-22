@@ -323,11 +323,41 @@ div.topic-post.comment .topic-body .who-read {
   padding-bottom: 30px;
 }
 
-// Chat bigger font fix
+// Chat styling
 .chat-drawer-content {
-  font-size: var(--font-down-2);
+  font-size: var(--font-down-1);
 }
-
+.c-navbar__title-text {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: var(--font-down-1);
+  font-family: var(--heading-font-family);
+}
+.chat-drawer-container .c-navbar__title {
+  padding: 0.53em 0 0.11em 0.53em;
+}
+.chat-channel-divider {
+  display: none;
+}
+.chat-drawer-container .channels-list-container .chat-channel-row {
+  height: 3em;
+}
+.c-user-thread .chat__thread-title__name {
+  font-size: 1em;
+  font-weight: bold;
+}
+.c-user-thread .chat-message-thread-indicator {
+  font-size: var(--font-down-1);
+}
+.chat-message-actions {
+  font-size: var(--font-down-1-rem);
+}
+.chat-composer__outer-container {
+  padding-inline: 0.63em;
+}
+.is-send-disabled .chat-composer-button.-send {
+  padding-bottom: 0.3em;
+}
 // Hide default trust_levels
 .group-box[data-group-name="trust_level_1"],
 .group-box[data-group-name="trust_level_2"],
@@ -570,6 +600,9 @@ img.emoji {
 .check-display {
   border-radius: 0.15rem !important;
 }
+.check-display.status-checked .check-display .d-icon {
+  font-size: var(--font-up-2-rem) !important;
+}
 .groups-boxes .group-box .group-membership .is-group-owner,
 .groups-boxes .group-box .group-membership .is-group-member {
   color: unset !important;
@@ -581,4 +614,9 @@ img.emoji {
 // Padding to search button
 .btn .search-icon {
   padding-bottom: 0.11rem;
+}
+
+// Fixing icon colors
+.sidebar-section-link-wrapper .sidebar-section-link-prefix {
+  color: transparent !important;
 }
