@@ -8,7 +8,9 @@
   "theme_version": "0.0.1",
   "component": true,
   "modifiers": {
-    "svg_icons": ["fire"],
+    "svg_icons": [
+      "fire"
+    ],
     "serialize_topic_is_hot": true
   },
   "color_schemes": {
@@ -33,6 +35,7 @@
       "hover": "333548"
     }
   },
-  "parent_themes": ["horizon"],
-  "settings": []
+  "parent_themes": [
+    "horizon"
+  ]
 }
