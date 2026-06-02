@@ -628,10 +628,15 @@ img.emoji {
 
 // [EXPERIMENTAL] Max-width fix on vertical structured profile
 .user-content {
-  max-width: 75%
+  max-width: 75%;
 }
 
 #user-content .topic-list-data .views .sortable .num,
 #user-content .num .views .topic-list-data {
   display: none;
+}
+
+// Margin after header category
+#main-outlet .list-container div[class^="category-title-header"] {
+  margin-bottom: 1rem;
 }
