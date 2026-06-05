@@ -47,6 +47,17 @@ body.has-full-page-chat:not(.has-sidebar-page) {
   }
 }
 
+// Narrow the docked sidebar to 75% of Discourse's default width on desktop.
+// Core sets --d-sidebar-width: 17em (common/foundation/variables.scss).
+// Overriding the variable itself keeps the sidebar's contents, padding, and
+// the layout grid column in sync. Scoped to >=1024px so the mobile/overlay
+// sidebar keeps its default behavior.
+@media (width >=1024px) {
+  :root {
+    --d-sidebar-width: calc(17em * 0.75); // 12.75em (25% narrower)
+  }
+}
+
 body.has-sidebar-page #main-outlet-wrapper {
   grid-template-columns: var(--d-sidebar-width) minmax(0, 1fr) 0;
 
@@ -270,10 +281,6 @@ aside.onebox {
   border-radius: 0.23rem;
 }
 
-.category-breadcrumb li:first-child {
-  display: none !important;
-}
-
 .message-panel__inboxes .message-panel__inbox:nth-last-child {
   display: none;
 }
@@ -494,6 +501,12 @@ ul.ai-helper-options li[data-value="replace_dates"] {
 .user-preferences .form-vertical .control-group .pref-title,
 .user-preferences .form-vertical .control-group .pref-flair,
 .user-preferences .form-vertical .control-group .pref-email-settings {
+  display: none;
+}
+
+// Hide report topic (we look into it when reporting posts)
+
+.btn .topic-footer-button .flag-topic {
   display: none;
 }
 
