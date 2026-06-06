@@ -1,7 +1,7 @@
 // Base font size (matches Discourse default)
 html {
   font-size: 18px;
-  font-size: 110%;
+  font-size: 107%;
 }
 
 :root {
@@ -392,7 +392,7 @@ div.topic-post.comment .topic-body .who-read {
 
 // Padding on Docs
 .discourse-docs-sidebar-panel .sidebar-section-link-wrapper .sidebar-section-link {
-  padding: 0.3rem 1rem;
+  padding: 0.3rem 0;
 }
 
 // Topic list styling
@@ -661,12 +661,61 @@ img.emoji {
   }
 }
 
-// Move search to the left (header links compatibility)
-.floating-search-input-wrapper {
-  justify-content: left !important;
+// Custom Header Links adjustments
+
+.custom-header-links .headerLink a {
+  padding: 0 .27em;
+  color: var(--header_primary);
+  font-size: unset;
+  margin-right: 0.5rem;
 }
 
 // Fix weird CSS color icons
 .sidebar-section-link-wrapper .sidebar-section-link-prefix.icon {
   color: inherit !important;
+}
+
+// Font-size adjust in Docs categories sidebar
+.discourse-docs-sidebar-panel .sidebar-section-link-wrapper .sidebar-section-link-content-text {
+  font-size: var(--font-down-1);
+}
+
+// Blog styling plugin (scale down)
+.blog-post .regular {
+  font-size: var(--font-down-1);
+}
+
+// Signup button hiding (Member Applications Plugin ON)
+.btn .btn-primary .btn-small .sign-up-button,
+#new-account-link {
+  display: none !important;
+}
+
+.btn .btn-small .btn-default .member-application-header-apply-btn {
+  background-color: var(--accent-color);
+  color: var(--accent-text-color);
+  margin-left: 0.25rem;
+}
+
+// Heading adapting heading font-size
+@media (width >=40rem) {
+  .login-welcome-header .login-title {
+    font-size: var(--font-up-5);
+  }
+}
+
+// Anonymous users full display on login header
+.anon .d-header .panel {
+  grid-column-start: unset;
+}
+
+// Anonymous hiding some stuff on sidebar {
+.anon .sidebar-section [data-section-name="apps-externas"],
+.anon .sidebar-section [data-section-name="categories"] {
+  display: none;
+}
+
+// Hiding related topics on trading course
+.category-trading-curso .more-topics__container {
+  display: none;
 }
