@@ -686,7 +686,7 @@ img.emoji {
 }
 
 // Signup button hiding (Member Applications Plugin ON)
-.btn .btn-primary .btn-small .sign-up-button,
+.auth-buttons .sign-up-button,
 #new-account-link {
   display: none !important;
 }
@@ -710,12 +710,40 @@ img.emoji {
 }
 
 // Anonymous hiding some stuff on sidebar {
-.anon .sidebar-section [data-section-name="apps-externas"],
-.anon .sidebar-section [data-section-name="categories"] {
+.anon .sidebar-section-wrapper.sidebar-section[data-section-name="apps-externas"],
+.anon .sidebar-section-wrapper.sidebar-section[data-section-name="categories"] {
   display: none !important;
 }
 
 // Hiding related topics on trading course
 .category-trading-curso .more-topics__container {
   display: none !important;
+}
+
+// Show comments in [EXP] unified docs feature
+
+.post__topic-map.topic-map.--op {
+  display: flex !important
+}
+
+.topic-post[data-post-number="1"] {
+  .topic-avatar {
+    display: block !important;
+  }
+
+  .topic-meta-data {
+    .names {
+      display: block !important
+    }
+
+    .like,
+    .reply {
+      display: block !important
+    }
+  }
+}
+
+.topic-list.doc-simple-mode .link-bottom-line .badge-category__wrapper,
+.topic-list.doc-simple-mode .topic-excerpt {
+  display: inline-flex !important
 }
