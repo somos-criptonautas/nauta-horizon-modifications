@@ -706,16 +706,16 @@ img.emoji {
 
 // Anonymous users full display on login header
 .anon .d-header .panel {
-  grid-column-start: unset;
+  grid-column-start: unset !important;
 }
 
 // Anonymous hiding some stuff on sidebar {
 .anon .sidebar-section [data-section-name="apps-externas"],
 .anon .sidebar-section [data-section-name="categories"] {
-  display: none;
+  display: none !important;
 }
 
 // Hiding related topics on trading course
 .category-trading-curso .more-topics__container {
-  display: none;
+  display: none !important;
 }
