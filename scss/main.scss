@@ -1,6 +1,6 @@
 // Base font size (matches Discourse default)
 html {
-  font-size: 20px;
+  font-size: 19px;
   font-size: 110%;
 }
 
@@ -652,4 +652,13 @@ img.emoji {
 // Margin after header category
 #main-outlet .list-container div[class^="category-title-header"] {
   margin-bottom: 1rem;
+}
+
+// Move search to the left (header links compatibility)
+.search-header--visible .custom-header-links {
+  display: none;
+}
+
+.floating-search-input-wrapper {
+  justify-content: left;
 }
