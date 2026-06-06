@@ -1,6 +1,6 @@
 // Base font size (matches Discourse default)
 html {
-  font-size: 19px;
+  font-size: 18px;
   font-size: 110%;
 }
 
@@ -654,11 +654,19 @@ img.emoji {
   margin-bottom: 1rem;
 }
 
-// Move search to the left (header links compatibility)
-.search-header--visible .custom-header-links {
-  display: none;
+// Float search hide header text on tablet devices
+@media (width <=1024px) {
+  .search-header--visible .custom-header-links {
+    display: none;
+  }
 }
 
+// Move search to the left (header links compatibility)
 .floating-search-input-wrapper {
-  justify-content: left;
+  justify-content: left !important;
+}
+
+// Fix weird CSS color icons
+.sidebar-section-link-prefix .icon {
+  color: inherit !important;
 }
