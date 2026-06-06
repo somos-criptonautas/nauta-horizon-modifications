@@ -667,6 +667,6 @@ img.emoji {
 }
 
 // Fix weird CSS color icons
-.sidebar-section-link-prefix .icon {
+.sidebar-section-link-wrapper .sidebar-section-link-prefix.icon {
   color: inherit !important;
 }
