@@ -6,6 +6,7 @@ html {
 
 :root {
   --main-grid-gap: 0.5em;
+  --d-max-width: 1350px;
 }
 
 html:not(:has(.has-full-page-chat)) {
