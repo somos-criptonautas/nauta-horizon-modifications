@@ -41,4 +41,11 @@ export default apiInitializer((api) => {
             });
     });
 
+    api.onPageChange((url) => {
+        if (!url.startsWith("/g")) return;
+    // Ember hasn't finished rendering yet, wait for DOM
+    setTimeout(cleanGroupNames, 300);
+  });
+
+
 });
