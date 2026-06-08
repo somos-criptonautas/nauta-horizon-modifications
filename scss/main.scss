@@ -7,6 +7,7 @@ html {
 :root {
   --main-grid-gap: 0.5em;
   --d-max-width-topic: 1250px;
+  --below-topic-margin: 1.11rem;
 }
 
 html:not(:has(.has-full-page-chat)) {
@@ -757,18 +758,33 @@ img.emoji {
 
 @media (width >=40rem) {
   body:not(.has-full-page-chat, .wizard) #main-outlet-wrapper #main-outlet> :not(.experimental-screen, .activate-account, .discourse-kanban-board-viewer) {
-    max-width: var (--d-max-width-topic);
+    max-width: var(--d-max-width-topic) !important;
   }
 }
 
 @media (width >=1024px) {
   body:not(.has-full-page-chat, .wizard) #main-outlet-wrapper #main-outlet> :not(.experimental-screen, .activate-account) {
-    max-width: var (--d-max-width-topic);
+    max-width: var(--d-max-width-topic) !important;
   }
 }
 
 #topic-footer-buttons {
   max-width: unset;
+}
+
+@media (width >=40rem) {
+  .topic-body {
+    width: calc(var(--topic-body-width) + var(--topic-body-width-padding)*2);
+  }
+
+  :root {
+    --topic-body-width: 850px;
+  }
+
+  .header-search--enabled .floating-search-input-wrapper,
+  .search-header--visible .floating-search-input-wrapper {
+    justify-content: unset;
+  }
 }
 
 // Group naming ordering [EXPERIMENTAL]
