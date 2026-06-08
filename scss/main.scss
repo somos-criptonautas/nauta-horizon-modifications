@@ -249,15 +249,9 @@ aside.onebox {
   display: none !important;
 }
 
-.div[class^="category-title-header"] {
-  color: unset !important;
-}
-
-// ** Apply styles to some categories ** //
-.sidebar-section-link [data-link-name="preguntas"] a,
-.sidebar-section-link [data-link-name="preguntas"] .icon svg,
-.sidebar-section-link [data-link-name="curso"] a,
-.sidebar-section-link [data-link-name="curso"] .icon svg {
+// ** Apply styles to paid category ** //
+.sidebar-section-link [data-link-name="trading"] a,
+.sidebar-section-link [data-link-name="trading"] .icon svg {
   color: #be99f8 !important;
 }
 
@@ -656,7 +650,7 @@ img.emoji {
 }
 
 // Margin after header category + banner transparent
-#main-outlet .list-container div[class^="category-title-header"] {
+.category-title-header {
   margin-bottom: 1rem;
   --category-banner-background: transparent !important;
   --category-banner-color: unset !important;
@@ -792,6 +786,11 @@ img.emoji {
   #main-outlet div[class^="category-title-header"] {
     max-width: 100%;
   }
+}
+
+// Fix searchbar with header links
+.floating-search-input-wrapper {
+  margin: 0 0.5em;
 }
 
 // Group naming ordering [EXPERIMENTAL]

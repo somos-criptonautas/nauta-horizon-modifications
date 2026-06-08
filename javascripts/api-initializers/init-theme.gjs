@@ -8,7 +8,6 @@ export default apiInitializer((api) => {
     api.replaceIcon("robot", "lightning");
     api.replaceIcon("language", "translate");
     api.replaceIcon("pencil", "note-pencil");
-    api.replaceIcon("pencil", "note-pencil");
 
     // Do not display closed groups buttons
     const hideClosedButtons = () => {
