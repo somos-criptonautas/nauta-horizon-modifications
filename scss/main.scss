@@ -6,7 +6,7 @@ html {
 
 :root {
   --main-grid-gap: 0.5em;
-  --d-max-width: 1350px;
+  --d-max-width-topic: 1250px;
 }
 
 html:not(:has(.has-full-page-chat)) {
@@ -384,10 +384,20 @@ div.topic-post.comment .topic-body .who-read {
   display: none !important;
 }
 
+// Hide redundant groups
+.group-box [data-group-name="moderadores"],
+.group-box [data-group-name="admins"] {
+  display: none !important;
+}
+
+
+// Hide them in selectors
 .select-kit .select-kit-row[data-name="trust_level_1"],
 .select-kit .select-kit-row[data-name="trust_level_2"],
 .select-kit .select-kit-row[data-name="trust_level_3"],
-.select-kit .select-kit-row[data-name="trust_level_4"] {
+.select-kit .select-kit-row[data-name="trust_level_4"],
+.select-kit .select-kit-row[data-name="moderadores"],
+.select-kit .select-kit-row[data-name="admins"] {
   display: none !important;
 }
 
@@ -431,7 +441,7 @@ div.topic-post.comment .topic-body .who-read {
 }
 
 // Remove apps from @anon sidebar
-.anon .sidebar-section-wrapper.sidebar-section[data-section-name="mas-apps"],
+.anon.sidebar-section[data-section-name="mas-apps"],
 li.sidebar-section-link-wrapper[data-category-id="37"] {
   display: none !important;
 }
@@ -449,12 +459,6 @@ body.user-messages-page .new-user-wrapper .user-navigation-secondary {
 // Disable some AI Helper functions
 ul.ai-helper-options li[data-value="replace_dates"] {
   display: none;
-}
-
-// Hide redundant groups
-.groups-boxes .group-box [data-group-name="moderadores"],
-.groups-boxes .group-box [data-group-name="admins"] {
-  display: none !important;
 }
 
 // Style TOCs
@@ -506,7 +510,6 @@ ul.ai-helper-options li[data-value="replace_dates"] {
 }
 
 // Hide report topic (we look into it when reporting posts)
-
 .btn .topic-footer-button .flag-topic {
   display: none;
 }
@@ -742,4 +745,33 @@ img.emoji {
 .topic-list.doc-simple-mode .link-bottom-line .badge-category__wrapper,
 .topic-list.doc-simple-mode .topic-excerpt {
   display: inline-flex !important
+}
+
+// Topic display testing
+
+@media screen and (width >=925px) {
+  .container.posts {
+    grid-template-columns: 80% 20%;
+  }
+}
+
+@media (width >=40rem) {
+  body:not(.has-full-page-chat, .wizard) #main-outlet-wrapper #main-outlet> :not(.experimental-screen, .activate-account, .discourse-kanban-board-viewer) {
+    max-width: var (--d-max-width-topic);
+  }
+}
+
+@media (width >=1024px) {
+  body:not(.has-full-page-chat, .wizard) #main-outlet-wrapper #main-outlet> :not(.experimental-screen, .activate-account) {
+    max-width: var (--d-max-width-topic);
+  }
+}
+
+#topic-footer-buttons {
+  max-width: unset;
+}
+
+// Group naming ordering [EXPERIMENTAL]
+.group-info-mention-name {
+  display: none;
 }
