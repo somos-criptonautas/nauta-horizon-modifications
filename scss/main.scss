@@ -8,6 +8,7 @@ html {
   --main-grid-gap: 0.5em;
   --d-max-width-topic: 1250px;
   --below-topic-margin: 1.11rem;
+  --d-control-height: --space-8;
 }
 
 html:not(:has(.has-full-page-chat)) {
@@ -811,5 +812,32 @@ img.emoji {
 
 // f-nav edits
 .f-nav {
-  height: 3rem;
+  height: 3rem !important;
+}
+
+// Icons on Welcome Banner (EXPERIMENTAL)
+.welcome-banner__wrap {
+  flex-wrap: wrap;
+}
+
+.banner-featured-links__wrapper {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.welcome-banner__wrap .search-menu,
+.welcome-banner__title {
+  flex: 1;
+}
+
+// Invert categories and tags order - Publish to right
+
+.list-controls .navigation-container .category-breadcrumb {
+  order: unset;
+}
+
+.navigation-controls {
+  flex: 1;
+  justify-content: flex-end;
 }
