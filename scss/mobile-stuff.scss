@@ -11,12 +11,9 @@ body.f-nav-hidden:not(.has-full-page-chat) .f-nav {
 }
 
 // Hide navigation (desktop on mobile) on scrolling
-body.f-nav-hidden:not(
-    .archetype-regular,
-    .archetype-private_message,
-    .has-full-page-chat
-  )
-  .list-controls {
+body.f-nav-hidden:not(.archetype-regular,
+  .archetype-private_message,
+  .has-full-page-chat) .list-controls {
   position: static;
 }
 
@@ -48,10 +45,7 @@ body.f-nav-hidden:not(
 }
 
 // No border on end (prevent navbar redundance)
-.more-topics__container
-  .more-topics__list
-  .topic-list-body
-  .topic-list-item:last-of-type {
+.more-topics__container .more-topics__list .topic-list-body .topic-list-item:last-of-type {
   border-bottom: none;
 }
 
@@ -186,7 +180,7 @@ body.f-nav-hidden:not(
     gap: 1.5em;
 
     // Both columns take full width
-    > * {
+    >* {
       width: 100% !important;
       max-width: 100% !important;
       flex: unset !important;
@@ -203,4 +197,9 @@ body.f-nav-hidden:not(
       order: 2;
     }
   }
+}
+
+// navigation-mobile-nowrap
+#navigation-bar {
+  flex-wrap: unset;
 }
