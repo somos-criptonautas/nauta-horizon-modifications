@@ -832,7 +832,6 @@ img.emoji {
 }
 
 // Invert categories and tags order - Publish to right
-
 .list-controls .navigation-container .category-breadcrumb {
   order: unset;
 }
@@ -840,4 +839,9 @@ img.emoji {
 .navigation-controls {
   flex: 1;
   justify-content: flex-end;
+}
+
+// Hide navigation bar
+#navigation-bar {
+  display: none;
 }
