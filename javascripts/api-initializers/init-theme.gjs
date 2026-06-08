@@ -28,24 +28,4 @@ export default apiInitializer((api) => {
     api.registerValueTransformer("navigation-bar-dropdown-mode", () => {
         return false;
     });
-
-    // Monkey code to order groups
-    api.onPageChange((url) => {
-        if (!url.startsWith("/g/")) return;
-
-        document.querySelector(".group-info-name")
-            ?.childNodes
-            .forEach((node) => {
-                if (node.nodeType === Node.TEXT_NODE)
-                    node.textContent = node.textContent.replace(/\[.*?\]/g, "").trim();
-            });
-    });
-
-    api.onPageChange((url) => {
-        if (!url.startsWith("/g")) return;
-    // Ember hasn't finished rendering yet, wait for DOM
-    setTimeout(cleanGroupNames, 300);
-  });
-
-
 });
