@@ -833,7 +833,7 @@ img.emoji {
 
 // Invert categories and tags order - Publish to right
 .list-controls .navigation-container .category-breadcrumb {
-  order: unset;
+  order: unset !important;
 }
 
 .navigation-controls {
