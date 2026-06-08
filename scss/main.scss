@@ -785,6 +785,10 @@ img.emoji {
   .search-header--visible .floating-search-input-wrapper {
     justify-content: unset;
   }
+
+  #main-outlet div[class^="category-title-header"] {
+    max-width: 100%;
+  }
 }
 
 // Group naming ordering [EXPERIMENTAL]
