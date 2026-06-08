@@ -654,9 +654,11 @@ img.emoji {
   display: none;
 }
 
-// Margin after header category
+// Margin after header category + banner transparent
 #main-outlet .list-container div[class^="category-title-header"] {
   margin-bottom: 1rem;
+  --category-banner-background: transparent !important;
+  --category-banner-color: unset !important;
 }
 
 // Float search hide header text on tablet devices
@@ -793,5 +795,16 @@ img.emoji {
 
 // Group naming ordering [EXPERIMENTAL]
 .group-info-mention-name {
+  display: none;
+}
+
+// More boxes in /categories
+.category-boxes-with-topics {
+  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+  margin-top: 0.6rem;
+}
+
+// Categories info only on banners
+.cooked.d-wrap[data-wrap="info-canal"] {
   display: none;
 }
