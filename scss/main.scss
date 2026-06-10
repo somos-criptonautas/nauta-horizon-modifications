@@ -847,21 +847,21 @@ img.emoji {
 
 // Welcome sections messages
 
-[class^="welcome-message"] {
+body.groups-page .custom-page-intro--groups {
+  display: block;
+  margin: 1 1.5rem;
+}
+
+body.badges-page .custom-page-intro--badges {
+  display: block;
+  margin: 1 1.5rem;
+}
+
+body.leaderboard-page .custom-page-intro--leaderboard {
+  display: block;
+  margin: 1 1.5rem;
+}
+
+.custom-page-intro {
   display: none;
-}
-
-.groups-page .welcome-message-groups {
-  display: block;
-  margin: 1.5rem;
-}
-
-.badges-page .welcome-message-badges {
-  display: block;
-  margin: 1.5rem;
-}
-
-.leaderboard-page .welcome-message-board {
-  display: block;
-  margin: 1.5rem;
 }
