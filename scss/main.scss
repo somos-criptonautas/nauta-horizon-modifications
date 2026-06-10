@@ -846,6 +846,9 @@ img.emoji {
 }
 
 // Welcome sections messages
+.custom-page-intro {
+  display: none;
+}
 
 body.groups-page .custom-page-intro--groups {
   display: block;
@@ -860,8 +863,4 @@ body.badges-page .custom-page-intro--badges {
 body.leaderboard-page .custom-page-intro--leaderboard {
   display: block;
   margin: 1 1.5rem;
-}
-
-.custom-page-intro {
-  display: none;
 }
