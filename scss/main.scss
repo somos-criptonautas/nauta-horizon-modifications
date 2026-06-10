@@ -844,3 +844,24 @@ img.emoji {
 #navigation-bar {
   display: none;
 }
+
+// Welcome sections messages
+
+[class^="welcome-message"] {
+  display: none;
+}
+
+.groups-page .welcome-message-groups {
+  display: block;
+  margin: 1.5rem;
+}
+
+.badges-page .welcome-message-badges {
+  display: block;
+  margin: 1.5rem;
+}
+
+.leaderboard-page .welcome-message-board {
+  display: block;
+  margin: 1.5rem;
+}
