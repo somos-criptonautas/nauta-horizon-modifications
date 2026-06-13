@@ -454,6 +454,10 @@ body.user-messages-page .new-user-wrapper .user-navigation-secondary {
   display: unset;
 }
 
+body.user-messages-page .new-user-wrapper .user-navigation .nav-pills li a {
+  justify-content: inherit;
+}
+
 // Disable some AI Helper functions
 ul.ai-helper-options li[data-value="replace_dates"] {
   display: none;
@@ -888,11 +892,8 @@ groups-page .page-intro--groups {
 }
 
 // Style and fix wrap on Profile MP
-.user-navigation-secondary .navigation-controls {
+.new-user.user-navigation-secondary .navigation-controls {
   flex-wrap: wrap-reverse;
-}
-
-.user-navigation-secondary .navigation-controls {
   justify-content: center;
 }
 
