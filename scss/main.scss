@@ -845,7 +845,7 @@ img.emoji {
   display: none;
 }
 
-// Welcome sections messages
+// [EXPERIMENTAL] Welcome sections messages
 .custom-page-intro {
   display: none;
 }
@@ -863,4 +863,86 @@ groups-page .page-intro--groups {
 .leaderboard-page .page-intro--leaderboard {
   display: block;
   margin: 1 1.5rem;
+}
+
+// Removing topic-list data on Docs Categories
+.category-wiki .topic-list .topic-list-data.num,
+.category-glosario .topic-list .topic-list-data.num {
+  display: none;
+}
+
+// Style user profile page
+.user-content {
+  max-width: unset;
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-user-list .replied-section {
+  display: none;
+}
+
+.top-section .top-categories-section {
+  order: 3;
+}
+
+.top-sub-section .links-section,
+.top-sub-section .summary-category-list,
+.top-sub-section .summary-category-list table {
+  width: 100%;
+}
+
+// Hide view on MPs table display + font-size adjust
+@include viewport.until(lg) {
+
+  .topic-list .topic-list-data.num.posts,
+  .topic-list .topic-list-data.num.views {
+    display: none;
+  }
+
+  :root {
+    font-size: 17px;
+  }
+
+}
+
+// Style and fix wrap on Profile MP
+.new-user-wrapper .user-navigation-secondary .navigation-controls {
+  flex-wrap: wrap-reverse;
+}
+
+.navigation-controls {
+  justify-content: center;
+}
+
+.navigation-controls button {
+  width: 90%;
+  height: 1.8rem;
+}
+
+.post__topic-map.topic-map.--op {
+  font-size: var(--font-down-1);
+}
+
+// Badges order + hide title choice
+.badge-groups {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-grouping>div:has(h2#ogs) {
+  order: 6;
+}
+
+.badge-grant-info {
+  display: none;
+}
+
+// Chat styling
+.chat-message-separator-date+.chat-message-separator__line-container .chat-message-separator__line {
+  border-top: none;
+}
+
+.d-templates-chat-insert-template-btn {
+  display: none;
 }
