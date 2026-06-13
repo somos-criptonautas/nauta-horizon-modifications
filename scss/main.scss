@@ -873,27 +873,6 @@ groups-page .page-intro--groups {
   display: none;
 }
 
-// Style user profile page
-.user-content {
-  max-width: unset;
-  display: flex;
-  flex-direction: column;
-}
-
-.summary-user-list .replied-section {
-  display: none;
-}
-
-.top-section .top-categories-section {
-  order: 3;
-}
-
-.top-sub-section .links-section,
-.top-sub-section .summary-category-list,
-.top-sub-section .summary-category-list table {
-  width: 100%;
-}
-
 // Hide view on MPs table display + font-size adjust
 @include viewport.until(lg) {
 
@@ -909,21 +888,31 @@ groups-page .page-intro--groups {
 }
 
 // Style and fix wrap on Profile MP
-.new-user-wrapper .user-navigation-secondary .navigation-controls {
+.user-navigation-secondary .navigation-controls {
   flex-wrap: wrap-reverse;
 }
 
-.navigation-controls {
+.user-navigation-secondary .navigation-controls {
   justify-content: center;
 }
 
-.navigation-controls button {
+.user-navigation-secondary .category-breadcrumb li {
+  width: 100%;
+}
+
+.user-navigation-secondary .navigation-controls button,
+.user-navigation-secondary .fk-d-menu__trigger messages-dropdown-trigger {
   width: 90%;
   height: 1.8rem;
 }
 
 .post__topic-map.topic-map.--op {
   font-size: var(--font-down-1);
+}
+
+.user-navigation-secondary .nav-pills li {
+  width: 100%;
+  justify-content: left;
 }
 
 // Badges order + hide title choice

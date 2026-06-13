@@ -1,0 +1,20 @@
+// Style user profile page
+.user-content {
+    max-width: unset;
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-user-list .replied-section {
+    display: none;
+}
+
+.top-section .top-categories-section {
+    order: 3;
+}
+
+.top-sub-section .links-section,
+.top-sub-section .summary-category-list,
+.top-sub-section .summary-category-list table {
+    width: 100%;
+}
